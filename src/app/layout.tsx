@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
 import "./globals.css";
+import Sidebar from "@/components/Sidebar";
+import MobileMenu from "@/components/MobileMenu";
 
 const roboto = Roboto({ weight: "400", subsets: ["latin"], display: "swap" });
 
@@ -16,7 +18,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${roboto.className} antialiased flex gap-2`}>
+      <body
+        className={`${roboto.className} antialiased flex gap-2 max-md:flex-col`}>
+        <Sidebar />
+        <div className="sticky top-0 h-10 flex justify-between items-center px-3 border-b shadow-md md:hidden">
+          <MobileMenu />
+          BS
+        </div>
         {children}
       </body>
     </html>
