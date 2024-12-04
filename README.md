@@ -1,8 +1,8 @@
 <div style="display: flex; justify-content: space-around;">
 
-  <img src="https://github.com/user-attachments/assets/f447e70e-c0d7-44ee-b6bc-ee9a73af1e32" alt="Screenshot 2024-12-04 193405" width="350"/>
+  <img src="https://github.com/user-attachments/assets/f447e70e-c0d7-44ee-b6bc-ee9a73af1e32" alt="Screenshot 2024-12-04 193405" width="300"/>
 
-  <img src="https://github.com/user-attachments/assets/6c41e31d-b188-49c1-a307-629dc671d983" alt="Screenshot 2024-12-04 193455" width="300"/>
+  <img src="https://github.com/user-attachments/assets/6c41e31d-b188-49c1-a307-629dc671d983" alt="Screenshot 2024-12-04 193455" width="280"/>
 
   <img src="https://github.com/user-attachments/assets/5221b1d5-685d-4ccb-8e58-a371d36d5dbd" alt="Screenshot 2024-12-04 193522" width="300"/>
 
