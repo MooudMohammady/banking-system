@@ -21,9 +21,11 @@ export default function RootLayout({
       <body
         className={`${roboto.className} antialiased flex gap-2 max-md:flex-col`}>
         <Sidebar />
-        <div className="sticky top-0 h-10 flex justify-between items-center px-3 border-b shadow-md md:hidden">
+        <div className="sticky top-0 h-10 flex justify-between items-center px-3 shadow-md md:hidden bg-white">
           <MobileMenu />
-          BS
+          <span className="font-semibold w-full text-right">
+            Banking System
+          </span>
         </div>
         {children}
       </body>

@@ -8,7 +8,7 @@ async function main() {
     data: {
       name: "John Doe",
       iban: "DE89370400440532013000",
-      balance: "1000",
+      balance: 1000,
     },
   });
 
@@ -18,24 +18,32 @@ async function main() {
       {
         name: "Deposit",
         type: "DEPOSIT",
-        amount: "500",
-        balance: "1500",
+        amount: 500,
+        balance: 1500,
         senderBankId: account.id,
         receiverBankId: account.id,
       },
       {
         name: "Withdrawal",
         type: "WITHDRAW",
-        amount: "-200",
-        balance: "1300",
+        amount: -600,
+        balance: 900,
         senderBankId: account.id,
         receiverBankId: account.id,
       },
       {
         name: "Withdrawal",
         type: "TRANSFER",
-        amount: "-200",
-        balance: "1300",
+        amount: -200,
+        balance: 700,
+        senderBankId: account.id,
+        receiverBankId: account.id,
+      },
+      {
+        name: "Deposit",
+        type: "DEPOSIT",
+        amount: 500,
+        balance: 1200,
         senderBankId: account.id,
         receiverBankId: account.id,
       },
