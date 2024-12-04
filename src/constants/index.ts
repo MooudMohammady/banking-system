@@ -1,4 +1,10 @@
-import { DollarCircle, Home2, MoneySend, ReceiptText } from "iconsax-react";
+import {
+  DollarCircle,
+  Home2,
+  MoneyRecive,
+  MoneySend,
+  ReceiptText,
+} from "iconsax-react";
 
 export const sidebarLinks = [
   {
@@ -20,5 +26,10 @@ export const sidebarLinks = [
     icon: MoneySend,
     route: "/payment-transfer",
     label: "Transfer Funds",
+  },
+  {
+    icon: MoneyRecive,
+    route: "/Deposit",
+    label: "Deposit",
   },
 ];
