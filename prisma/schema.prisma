@@ -17,13 +17,20 @@ model Account {
 }
 
 model Transaction {
-  id             String   @id @default(cuid())
+  id             String          @id @default(cuid())
   name           String
+  type           TransactionType
   amount         String
   balance        String
   senderBankId   String
   receiverBankId String
-  createdAt      DateTime @default(now())
+  createdAt      DateTime        @default(now())
 
   account Account @relation(fields: [senderBankId], references: [id], onDelete: Cascade)
+}
+
+enum TransactionType {
+  DEPOSIT
+  WITHDRAW
+  TRANSFER
 }

@@ -17,6 +17,7 @@ async function main() {
     data: [
       {
         name: "Deposit",
+        type: "DEPOSIT",
         amount: "500",
         balance: "1500",
         senderBankId: account.id,
@@ -24,6 +25,15 @@ async function main() {
       },
       {
         name: "Withdrawal",
+        type: "WITHDRAW",
+        amount: "-200",
+        balance: "1300",
+        senderBankId: account.id,
+        receiverBankId: account.id,
+      },
+      {
+        name: "Withdrawal",
+        type: "TRANSFER",
         amount: "-200",
         balance: "1300",
         senderBankId: account.id,
