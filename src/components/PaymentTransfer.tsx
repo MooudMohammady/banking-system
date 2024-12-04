@@ -3,7 +3,7 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Loader2 } from "lucide-react";
 import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { Suspense, useState } from "react";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
 
@@ -101,11 +101,13 @@ const PaymentTransferForm = ({ accounts }: PaymentTransferFormProps) => {
                 </div>
                 <div className="flex w-full flex-col">
                   <FormControl>
-                    <BankDropdown
-                      accounts={accounts}
-                      setValue={form.setValue}
-                      otherStyles="!w-full"
-                    />
+                    <Suspense fallback={null}>
+                      <BankDropdown
+                        accounts={accounts}
+                        setValue={form.setValue}
+                        otherStyles="!w-full"
+                      />
+                    </Suspense>
                   </FormControl>
                   <FormMessage className="text-xs text-red-500" />
                 </div>

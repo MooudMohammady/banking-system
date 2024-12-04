@@ -1,36 +1,223 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# My Next.js Project with Docker Support
 
-## Getting Started
+This project is a simple Next.js application integrated with Docker for easy deployment and management. It includes features like a form for adding bank accounts with validation and a backend connection for fetching and displaying account data.
 
-First, run the development server:
+## **Features**
+
+- 🏦 Add bank accounts with validation (e.g., IBAN format).
+- 📋 Fetch and display a list of bank accounts.
+- 🔒 Built with Next.js and React Hook Form for efficient form handling.
+- 🐳 Dockerized for seamless deployment.
+- ⚡ Fully customizable and easy to extend.
+
+---
+
+## **Getting Started**
+
+### **Prerequisites**
+
+Ensure you have the following installed on your system:
+
+- [Node.js](https://nodejs.org) (v18 or later recommended)
+- [Docker](https://www.docker.com/)
+- [Git](https://git-scm.com/)
+
+### **Installation**
+
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/your-repo/my-nextjs-project.git
+   cd banking-system
+   ```
+
+# My Next.js Project with Docker Support
+
+This project is a simple Next.js application integrated with Docker for easy deployment and management. It includes features like a form for adding bank accounts with validation and a backend connection for fetching and displaying account data.
+
+## **Features**
+
+- 🏦 Add bank accounts with validation (e.g., IBAN format).
+- 📋 Fetch and display a list of bank accounts.
+- 🔒 Built with Next.js and React Hook Form for efficient form handling.
+- 🐳 Dockerized for seamless deployment.
+- ⚡ Fully customizable and easy to extend.
+
+---
+
+## **Getting Started**
+
+### **Prerequisites**
+
+Ensure you have the following installed on your system:
+
+- [Node.js](https://nodejs.org) (v18 or later recommended)
+- [Docker](https://www.docker.com/)
+- [Git](https://git-scm.com/)
+
+### **Installation**
+
+1. **Clone the repository**:
+
+   ```bash
+   git clone https://github.com/MooudMohammady/banking-system.git
+   cd banking-system
+
+   ```
+
+2. **Install dependencies**:
+
+```bash
+npm install --force
+```
+
+3. **Set up environment variables**: Create a `.env` file in the root directory and add the necessary environment variables:
+
+```env
+DATABASE_URL=your-postgresql-database-url
+```
+
+---
+
+### Running Locally
+
+1. **Development server**: Start the Next.js development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. **Access the application**: Open your browser and visit: http://localhost:3000
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Using Docker
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. **Build the Docker image**:
 
-## Learn More
+```bash
+docker build -t banking-system .
+```
 
-To learn more about Next.js, take a look at the following resources:
+2. **Run the Docker container**:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+docker run -p 3000:3000 banking-system
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+3. **Access the application**: Open your browser and visit: http://localhost:3000
 
-## Deploy on Vercel
+#### ⚠ Running Only the Database Service with Docker Compose
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+**If you want** to run only the PostgreSQL database using Docker Compose, use the following command:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+docker-compose up postgres
+```
+
+This will start only the `postgres` service defined in your docker-compose.yml file. Ensure that your .env file contains the correct `DATABASE_URL` pointing to this database instance.
+
+### Project Structure
+
+```plaintext
+banking-system/
+├── public # Public assets
+├──
+├── src/
+│ ├── actions/ # API actions for data fetching and mutations
+│ ├── components/ # Shared UI components
+│ │ ├── ui/ # Reusable UI elements (Button, Input, etc.)
+│ ├── app/ # Next.js pages
+├──
+├── Dockerfile # Docker configuration
+├── README.md # Project documentation
+├── .env # Environment variables
+├── package.json # Project dependencies and scripts
+└── tsconfig.json # TypeScript configuration
+```
+
+---
+
+### Scripts
+
+- If this is the first time you run the project, be sure to execute this command first:
+
+```bash
+npm run prisma:prepare
+```
+
+- Enter this command if you need sample information:
+
+```bash
+npm run prisma:seed
+```
+
+- **Start development server**:
+
+```bash
+npm run dev
+```
+
+- **Build the application**:
+
+```bash
+npm run build
+```
+
+- **Run production server**:
+
+```bash
+npm run start
+```
+
+---
+
+### Form Validation
+
+The project uses `zod` and `react-hook-form` for validation. The bank account form includes:
+
+- **Bank Name**: Minimum 3 characters.
+- **IBAN**: Matches the standard IBAN format.
+- **Balance**: Valid numeric value.
+
+---
+
+### **Design System**
+
+This project utilizes **TailwindCSS** and **ShadCN** to build a scalable and reusable design system.
+
+#### **TailwindCSS**
+
+- A utility-first CSS framework for rapid UI development.
+- Provides a consistent and highly customizable styling system.
+- Enables responsive design and theming with ease.
+
+#### **ShadCN**
+
+- A collection of accessible and customizable UI components built with Radix and TailwindCSS.
+- Ensures consistent design language across the project.
+- Simplifies the development of reusable and composable components.
+
+---
+
+### License
+
+This project is licensed under the MIT License.
+
+---
+
+### Contributing
+
+Contributions are welcome! Please follow these steps:
+
+1. Fork the repository.
+2. Create a feature branch: `git checkout -b feature-name`.
+3. Commit your changes: `git commit -m "Add feature-name"`.
+4. Push to the branch: `git push origin feature-name`.
+5. Open a pull request.
+
+---
+
+### Contact
+
+For any questions or issues, please feel free to reach out:
+
+- **Email**: mooudmohammadi@gmail.com
+- **GitHub**: https://github.com/MooudMohammady
