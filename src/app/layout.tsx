@@ -1,17 +1,10 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
+import { Roboto } from "next/font/google";
 import "./globals.css";
+import Sidebar from "@/components/Sidebar";
+import MobileMenu from "@/components/MobileMenu";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
+const roboto = Roboto({ weight: "400", subsets: ["latin"], display: "swap" });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -26,8 +19,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+        className={`${roboto.className} antialiased flex gap-2 max-md:flex-col`}>
+        <Sidebar />
+        <div className="sticky top-0 h-10 flex justify-between items-center px-3 shadow-md md:hidden bg-white">
+          <MobileMenu />
+          <span className="font-semibold w-full text-right">
+            Banking System
+          </span>
+        </div>
         {children}
       </body>
     </html>
