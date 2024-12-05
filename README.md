@@ -35,38 +35,6 @@ Ensure you have the following installed on your system:
 ### **Installation**
 
 1. **Clone the repository**:
-   ```bash
-   git clone https://github.com/your-repo/my-nextjs-project.git
-   cd banking-system
-   ```
-
-# My Next.js Project with Docker Support
-
-This project is a simple Next.js application integrated with Docker for easy deployment and management. It includes features like a form for adding bank accounts with validation and a backend connection for fetching and displaying account data.
-
-## **Features**
-
-- 🏦 Add bank accounts with validation (e.g., IBAN format).
-- 📋 Fetch and display a list of bank accounts.
-- 🔒 Built with Next.js and React Hook Form for efficient form handling.
-- 🐳 Dockerized for seamless deployment.
-- ⚡ Fully customizable and easy to extend.
-
----
-
-## **Getting Started**
-
-### **Prerequisites**
-
-Ensure you have the following installed on your system:
-
-- [Node.js](https://nodejs.org) (v18 or later recommended)
-- [Docker](https://www.docker.com/)
-- [Git](https://git-scm.com/)
-
-### **Installation**
-
-1. **Clone the repository**:
 
    ```bash
    git clone https://github.com/MooudMohammady/banking-system.git
