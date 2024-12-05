@@ -8,7 +8,7 @@
 
 </div>
 
-# My Next.js Project with Docker Support
+# Banking system with Next.js & TypeScript
 
 This project is a simple Next.js application integrated with Docker for easy deployment and management. It includes features like a form for adding bank accounts with validation and a backend connection for fetching and displaying account data.
 
@@ -122,23 +122,25 @@ docker run -p 3000:3000 banking-system
 docker-compose up postgres
 ```
 
-This will start only the `postgres` service defined in your docker-compose.yml file. Ensure that your .env file contains the correct `DATABASE_URL` pointing to this database instance.
+This will start only the `postgres` service defined in docker-compose.yml file. Ensure that your .env file contains the correct `DATABASE_URL` pointing to this database instance.
+
+---
 
 ### Project Structure
 
 ```plaintext
 banking-system/
 ├── public # Public assets
-├──
 ├── src/
 │ ├── actions/ # API actions for data fetching and mutations
+│ ├── app/ # Next.js pages
 │ ├── components/ # Shared UI components
 │ │ ├── ui/ # Reusable UI elements (Button, Input, etc.)
-│ ├── app/ # Next.js pages
-├──
-├── Dockerfile # Docker configuration
+│ ├── lib/ # additional features
+├── docker-compose.yml # Docker configuration for postgres DB
+├── dockerfile # Docker configuration
 ├── README.md # Project documentation
-├── .env # Environment variables
+├── .env # Environment variables (not exist by default)
 ├── package.json # Project dependencies and scripts
 └── tsconfig.json # TypeScript configuration
 ```
@@ -222,6 +224,19 @@ Contributions are welcome! Please follow these steps:
 3. Commit your changes: `git commit -m "Add feature-name"`.
 4. Push to the branch: `git push origin feature-name`.
 5. Open a pull request.
+
+#### Suggested Tasks for Contributors
+
+If you're looking for specific tasks to contribute, here are some areas where help is needed:
+
+- **Build the Deposit Page and Logic**: Design and implement the user interface and backend logic for depositing funds.
+- **Build the Withdraw Page and Logic**: Create the page and functionality for withdrawing funds from accounts.
+- **Write Automated Tests**: Use tools like **Cypress** or **Jest** to write robust test cases for the application.
+- **Bug Fixes and Enhancements**: Complete pending details, optimize existing features, and resolve reported bugs.
+- **Add Pagination and Filters**: Implement pagination and filtering for the transaction history page to improve usability.
+- **Other Outstanding Tasks**: Review the issue tracker for other tasks that need attention or discuss with the team for additional ideas.
+
+Your contributions make a difference!
 
 ---
 
